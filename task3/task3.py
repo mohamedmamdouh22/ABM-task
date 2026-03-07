@@ -48,10 +48,8 @@ async def main() -> None:
         img_locator = page.locator("img.captcha-img")
         img_count = await img_locator.count()
 
-        viewport = page.viewport_size or {"width": 1280, "height": 720}
-
         async def is_humanly_visible(locator_item) -> bool:
-            """True only if the element is actually on screen and not visually occluded."""
+            """True if element is visible and topmost at its center point."""
             if not await locator_item.is_visible():
                 return False
 
@@ -60,13 +58,6 @@ async def main() -> None:
                 return False
 
             if box["width"] <= 1 or box["height"] <= 1:
-                return False
-
-            left, top = box["x"], box["y"]
-            right, bottom = left + box["width"], top + box["height"]
-            if right <= 0 or bottom <= 0:
-                return False
-            if left >= viewport["width"] or top >= viewport["height"]:
                 return False
 
             handle = await locator_item.element_handle()
