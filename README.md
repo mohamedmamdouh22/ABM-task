@@ -68,7 +68,7 @@ Scrapes the BLS Spain CAPTCHA page to extract all images and identify which ones
 
 ## Task 4 — System Architecture Diagram
 
-**File:** `task4/architecture_diagram.html`
+**File:** `task4/system_design.png`
 
 Comprehensive architecture diagram for a distributed browser-automation system at scale.
 
@@ -83,7 +83,7 @@ Comprehensive architecture diagram for a distributed browser-automation system a
 | Monitoring | Prometheus, Grafana, System Health service, Current Load service, ELK Stack, Alertmanager |
 | Failover | Circuit Breaker, DB auto-failover (Patroni), message persistence, exponential backoff retry, multi-region DNS failover |
 
-Open `task4/architecture_diagram.html` in any browser — no dependencies required.
+Open `task4/system_design.png`.
 
 ---
 
@@ -102,5 +102,4 @@ playwright install chromium
 python task1/task1.py   # generates reserved_token.json
 python task2/task2.py   # requires task1 to have run first
 python task3/task3.py   # independent
-# Task 4 is a static HTML file — open directly in a browser
 ```
