@@ -9,5 +9,4 @@ downloaded_files/
 
 # Virtual environments
 .venv
-*.png
 *.json
